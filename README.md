@@ -7,15 +7,15 @@
 ## 用法
 ```
 allprojects {
-	repositories {
-		...
-		maven { url 'https://jitpack.io' }
-	}
+    repositories {
+	...
+	maven { url 'https://jitpack.io' }
+    }
 }
 ```
 ```
 dependencies {
-	      implementation 'com.github.huolongluo:Daemon:v1.0'
+	implementation 'com.github.huolongluo:Daemon:v1.0'
 }
 ```
 ## 在application中启动保活服务
