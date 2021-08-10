@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tqxd.daemon">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />//TODD兼容Android9.0权限
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+
+    <application>
+        <receiver android:name=".receiver.NotificationClickReceiver" />
+        <activity
+            android:name=".activity.OnePixelActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:theme="@style/onePixelActivity" />
+
+        <service android:name=".service.LocalService" />
+        <service android:name=".service.HideForegroundService" />
+        <service
+            android:name=".service.JobHandlerService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service
+            android:name=".service.RemoteService"
+            android:process=":remote" />
+    </application>
+
+</manifest>
